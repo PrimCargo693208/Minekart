@@ -1,0 +1,2 @@
+execute as @p[distance=..1.1] if score @s item.collected matches 0 run tellraw @s ["[+] Item"]
+execute as @p[distance=..1.1] if score @s item.collected matches 0 store result score @s item.collected run random value 1..2

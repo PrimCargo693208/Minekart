@@ -1,0 +1,6 @@
+execute as @e[tag=mk2, tag=item.spawner, scores={time_ago.item_collect=200..}] at @s positioned ~-.5 ~ ~-.5 unless entity @e[type=block_display, sort=nearest, limit=1, distance=..1] unless entity @e[tag=mk2,tag=kart,distance=..2] run summon block_display ~ ~ ~ {width:1f,height:1f,Tags:["mk2","minekart2","item.box"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1f,1f,1f]},block_state:{Name:"minecraft:chest"}}
+execute as @e[tag=mk2, tag=item.spawner] at @s positioned ~-.5 ~ ~-.5 unless entity @e[type=block_display, sort=nearest, limit=1, distance=..1] run scoreboard players add @s time_ago.item_collect 1
+execute as @e[tag=mk2, tag=item.spawner, scores={time_ago.item_collect=200..}] at @s positioned ~-.5 ~ ~-.5 if entity @e[type=block_display, sort=nearest, limit=1, distance=..1] run scoreboard players set @s time_ago.item_collect 0
+
+execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] as @p[distance=..1] run function minekart:items/give_player
+execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @p[distance=..1] if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] run kill @s

@@ -3,15 +3,6 @@ say Minekart geht in die 2. Runde!!! 🎉🥳
 
 function minekart:load_items
 
-scoreboard objectives remove speed
-scoreboard objectives remove pos
-scoreboard objectives remove time_ago.item_collect
-scoreboard objectives remove time_ago.sound_played
-scoreboard objectives remove free.hand 
-scoreboard objectives remove free.hotbar8
-scoreboard objectives remove item.used
-scoreboard objectives remove item.collected
-
 scoreboard objectives add speed dummy
 scoreboard objectives add pos dummy ["Position on Road"]
 scoreboard objectives add time_ago.item_collect dummy

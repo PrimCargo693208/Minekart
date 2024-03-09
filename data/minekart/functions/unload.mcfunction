@@ -1,5 +1,6 @@
 scoreboard objectives remove speed
 scoreboard objectives remove pos
+scoreboard objectives remove rounds
 scoreboard objectives remove time_ago.item_collect
 scoreboard objectives remove time_ago.sound_played
 scoreboard objectives remove free.hand 

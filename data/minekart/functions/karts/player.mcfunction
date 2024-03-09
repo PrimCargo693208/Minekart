@@ -26,6 +26,16 @@ execute as @a if entity @s[scores={speed=41..}, nbt={"SelectedItem":{id:"minecra
 execute as @a if entity @s[scores={speed=51..}, nbt={"SelectedItem":{id:"minecraft:orange_stained_glass_pane"}}] run scoreboard players remove @s speed 1
 execute as @a if entity @s[scores={speed=61..}, nbt={"SelectedItem":{id:"minecraft:red_stained_glass_pane"}}] run scoreboard players remove @s speed 1
 
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] if block ~ ~-1.5 ~ minecraft:diamond_block run scoreboard players add @s rounds 1
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] if block ~ ~-1.5 ~ minecraft:diamond_block run title @s[scores={rounds=..3}] title ["",{"text":"Runde ","bold":true,"color":"dark_aqua"},{"score":{"name":"@s","objective":"rounds"},"bold":true,"color":"gold"},{"text":"/3","bold":true,"color":"gold"}]
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] if block ~ ~-1.5 ~ minecraft:diamond_block run title @s[scores={rounds=4..}] title ["",{"text":"ZIEL","bold":true,"color":"dark_aqua"}]
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] if block ~ ~-1.5 ~ minecraft:diamond_block run tag @s add next_round
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=next_round] unless block ~ ~-1.5 ~ minecraft:diamond_block run tag @s remove next_round
+
+execute as @a[scores={rounds=4.., speed=2..}] run scoreboard players remove @s speed 2
+execute as @a[scores={rounds=4..}, tag=!finished] run say §2§lZIEL
+execute as @a[scores={rounds=4..}] run tag @s add finished
+
 tag @e remove off_road
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:red_wool run tag @s add off_road
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road

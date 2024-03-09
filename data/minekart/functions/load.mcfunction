@@ -13,7 +13,6 @@ scoreboard objectives add free.hotbar8 dummy
 scoreboard objectives add item.used minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add item.collected dummy
 
-scoreboard players add @a speed 0
 scoreboard players add @a pos 0
 scoreboard players add @a rounds 0
 scoreboard players add @a time_ago.item_collect 0
@@ -22,7 +21,9 @@ scoreboard players add @a free.hand 0
 scoreboard players add @a free.hotbar8 0
 scoreboard players add @a item.collected 0
 
-scoreboard objectives setdisplay sidebar rounds
+scoreboard objectives setdisplay sidebar pos
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
+function minekart:karts/count_marker
+function minekart:karts/summon_karts
 
 tellraw @a  ["","[Server] ",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"}]

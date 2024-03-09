@@ -41,10 +41,18 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
 
 execute as @e[tag=off_road] at @s run scoreboard players set @p speed 0
-execute as @e[tag=off_road] at @s run say @p  calls for Lakitu
+execute as @e[tag=off_road] at @s run say @p calls for Lakitu
 execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=tour.respawn, sort=nearest, limit=1]
 
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s at @p[distance=...5] positioned ~ ~.412500025 ~ run tp @s ~ ~ ~ ~ 0
+tag @e remove off_road
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:red_wool run tag @s add off_road
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
+
+execute as @e[tag=off_road] at @s run scoreboard players set @p speed 0
+execute as @e[tag=off_road] at @s run say @p calls for Lakitu
+execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=tour.respawn, sort=nearest, limit=1]
+
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s at @p[distance=...5, scores={speed=10..}] positioned ~ ~.41249938686374 ~ run tp @s ~ ~ ~ ~ 0
 
 function minekart:karts/player_movement
 
@@ -53,6 +61,6 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, score
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, scores={time_ago.sound_played=35..}] run scoreboard players set @s time_ago.sound_played 0
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run title @a actionbar ["",{"text":"Speed: ","color":"gold"},{"score":{"name":"@s","objective":"speed"},"bold":true,"color":"aqua"}]
 
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] run tp @s ~ ~ ~ ~90 0
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5, scores={speed=10..}] run tp @s ~ ~ ~ ~90 0
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-1.1 ~ minecraft:purpur_stairs run tp @s ~ ~ ~ ~ 45
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-1.9 ~ minecraft:prismarine_brick_stairs run tp @s ~ ~ ~ ~ -45

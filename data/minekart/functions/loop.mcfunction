@@ -4,6 +4,7 @@ execute as @a store success score @s free.hotbar8 run data get entity @s Invento
 
 function minekart:items/use
 function minekart:karts/player
+function minekart:karts/com
 
 function minekart:items/box
 

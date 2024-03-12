@@ -26,4 +26,4 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:karts/count_marker
 function minekart:karts/summon_karts
 
-tellraw @a  ["","[Server] ",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"}]
+tellraw @a  ["","[Server] ",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"},"\n",{"text":" > Rennen starten","color":"gold","clickEvent":{"action":"suggest_command","value":"/function minekart:start"}}]

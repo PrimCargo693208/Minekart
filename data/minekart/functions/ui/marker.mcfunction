@@ -1,1 +1,1 @@
-execute if entity @a[name=Notch] as @e[type=marker] at @s if entity @p[distance=..32] run particle minecraft:witch ~ ~ ~
+execute if entity @a[name=!Notch] as @e[type=marker] at @s if entity @p[distance=..32] run particle minecraft:witch ~ ~ ~

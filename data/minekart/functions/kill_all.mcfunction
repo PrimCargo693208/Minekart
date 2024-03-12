@@ -1,1 +1,2 @@
-kill @e[tag=minkart2]
+kill @e[tag=com]
+kill @e[tag=kart]

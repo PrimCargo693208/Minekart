@@ -7,4 +7,4 @@ execute as @e[tag=mk2,tag=minekart2,tag=goal] at @s positioned ~-1 ~ ~2 unless e
 execute as @e[tag=mk2,tag=minekart2,tag=goal] at @s positioned ~1 ~ ~2 unless entity @p[distance=...5] run summon minecart ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["mk2","com","com_kart","minekart2"],Passengers:[{id:"minecraft:villager",Invulnerable:1b,Tags:["mk2","com","com_player","minekart2"],VillagerData:{profession:"minecraft:none"},Offers:{},}]}
 execute as @e[tag=mk2,tag=minekart2,tag=goal] at @s positioned ~ ~ ~3 unless entity @p[distance=...5] run summon minecart ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Tags:["mk2","com","com_kart","minekart2"],Passengers:[{id:"minecraft:villager",Invulnerable:1b,Tags:["mk2","com","com_player","minekart2"],VillagerData:{profession:"minecraft:none"},Offers:{},}]}
 
-execute as @e[tag=mk2,tag=com] run scoreboard players set @s pos 0
+scoreboard players set @e[tag=mk2,tag=com] pos 1

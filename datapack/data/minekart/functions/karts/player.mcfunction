@@ -54,7 +54,7 @@ function minekart:karts/player_movement
 scoreboard players add @a[scores={time_ago.sound_played=..999999}] time_ago.sound_played 1
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, scores={speed=5.., time_ago.sound_played=35..}] run playsound minecraft:block.beacon.ambient player @s
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, scores={time_ago.sound_played=35..}] run scoreboard players set @s time_ago.sound_played 0
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run title @a actionbar ["",{"text":"Speed: ","color":"gold"},{"score":{"name":"@s","objective":"speed"},"bold":true,"color":"aqua"}]
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run title @s actionbar ["",{"text":"Speed: ","color":"gold"},{"score":{"name":"@s","objective":"speed"},"bold":true,"color":"aqua"}]
 
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5, scores={speed=10..}] run tp @s ~ ~ ~ ~90 0
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-1.1 ~ minecraft:purpur_stairs run tp @s ~ ~ ~ ~ 45

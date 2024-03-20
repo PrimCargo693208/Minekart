@@ -21,7 +21,7 @@ scoreboard players add @a free.hand 0
 scoreboard players add @a free.hotbar8 0
 scoreboard players add @a item.collected 0
 
-scoreboard objectives setdisplay sidebar pos
+scoreboard objectives setdisplay sidebar rounds
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:karts/count_marker
 function minekart:karts/summon_karts

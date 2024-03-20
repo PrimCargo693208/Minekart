@@ -1,5 +1,5 @@
 {
     "values": [
-        "minekart:unload", "minekart:load"
+        "minekart:unload_reload", "minekart:load"
     ]
 }

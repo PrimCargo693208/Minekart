@@ -43,7 +43,7 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
 
 execute as @e[tag=off_road] at @s run scoreboard players set @p speed -100
-execute as @e[tag=off_road] at @s run title @p subtitle ["Error while loading Resourcepack 'MineKart_v2'                "]
+execute as @e[tag=off_road] at @s run title @p subtitle ["Error while loading Resourcepack 'MineKart_v2'"]
 execute as @e[tag=off_road] at @s run title @p title ["\uEff1"]
 execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=tour.respawn, sort=nearest, limit=1]
 

@@ -8,4 +8,6 @@ scoreboard objectives remove free.hotbar8
 scoreboard objectives remove item.used
 scoreboard objectives remove item.collected
 
+bossbar remove minecraft:mk2.rounds
+
 function minekart:kill_all_karts

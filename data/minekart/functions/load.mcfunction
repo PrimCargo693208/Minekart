@@ -21,6 +21,12 @@ scoreboard players add @a free.hand 0
 scoreboard players add @a free.hotbar8 0
 scoreboard players add @a item.collected 0
 
+bossbar add mk2.rounds ["Runden"]
+bossbar set minecraft:mk2.rounds players @a
+bossbar set minecraft:mk2.rounds max 3
+bossbar set minecraft:mk2.rounds style notched_6
+bossbar set minecraft:mk2.rounds color yellow
+
 scoreboard objectives setdisplay sidebar rounds
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:karts/count_marker

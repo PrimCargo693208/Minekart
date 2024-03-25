@@ -9,3 +9,4 @@ function minekart:karts/com
 function minekart:items/box
 
 function minekart:ui/marker
+function minekart:ui/bossbar

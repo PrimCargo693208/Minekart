@@ -27,7 +27,7 @@ bossbar set minecraft:mk2.rounds max 3
 bossbar set minecraft:mk2.rounds style notched_6
 bossbar set minecraft:mk2.rounds color yellow
 
-scoreboard objectives setdisplay sidebar rounds
+scoreboard objectives setdisplay below_name rounds
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:karts/count_marker
 function minekart:karts/summon_karts

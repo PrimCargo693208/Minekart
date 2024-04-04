@@ -2,5 +2,7 @@ execute as @e[tag=mk2, tag=item.spawner, scores={time_ago.item_collect=200..}] a
 execute as @e[tag=mk2, tag=item.spawner] at @s positioned ~-.5 ~ ~-.5 unless entity @e[type=block_display, sort=nearest, limit=1, distance=..1] run scoreboard players add @s time_ago.item_collect 1
 execute as @e[tag=mk2, tag=item.spawner, scores={time_ago.item_collect=200..}] at @s positioned ~-.5 ~ ~-.5 if entity @e[type=block_display, sort=nearest, limit=1, distance=..1] run scoreboard players set @s time_ago.item_collect 0
 
-execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] as @p[distance=..1] run function minekart:items/give_player
-execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @p[distance=..1] if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] run kill @s
+tag @e remove item.pickup
+execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] run tag @p[distance=..1, scores={item.collected=0}] add item.pickup
+execute as @a[tag=item.pickup] at @s run function minekart:items/give_player
+execute as @e[tag=mk2, tag=item.box] at @s positioned ~.5 ~ ~.5 if entity @p[distance=..1, tag=item.pickup] if entity @e[tag=mk2, tag=minekart2, tag=kart, distance=..1] run kill @s

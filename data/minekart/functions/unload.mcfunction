@@ -11,3 +11,4 @@ scoreboard objectives remove item.collected
 bossbar remove minecraft:mk2.rounds
 
 function minekart:kill_everything
+scoreboard objectives setdisplay below_name

@@ -1,0 +1,1 @@
+execute as @e[tag=mk2,tag=com_kart] at @s if score started data matches 1 run function minekart:npc/drive

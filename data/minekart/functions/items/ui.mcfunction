@@ -1,3 +1,3 @@
-execute if score @s item.collected matches 0 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick{display:{Name:'{"text":"0","italic":false}'}, CustomModelData:0} 1
-execute if score @s item.collected matches 1 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick{display:{Name:'{"text":"1","italic":false}'}, CustomModelData:1} 1
-execute if score @s item.collected matches 2 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick{display:{Name:'{"text":"2","italic":false}'}, CustomModelData:2} 1
+execute if score @s item.collected matches 0 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick[custom_name='{"italic":false,"text":"0"}',custom_model_data=0] 1
+execute if score @s item.collected matches 1 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick[custom_name='{"italic":false,"text":"1"}',custom_model_data=1] 1
+execute if score @s item.collected matches 2 run item replace entity @s hotbar.7 with warped_fungus_on_a_stick[custom_name='{"italic":false,"text":"2"}',custom_model_data=2] 1

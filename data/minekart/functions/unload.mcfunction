@@ -7,8 +7,9 @@ scoreboard objectives remove free.hand
 scoreboard objectives remove free.hotbar8
 scoreboard objectives remove item.used
 scoreboard objectives remove item.collected
+scoreboard objectives remove data
 
-bossbar remove minecraft:mk2.rounds
+bossbar remove mk2:rounds
 
 function minekart:kill_everything
 scoreboard objectives setdisplay below_name

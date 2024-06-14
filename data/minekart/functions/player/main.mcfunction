@@ -4,15 +4,14 @@ execute as @a[scores={speed=..-1}, nbt={"SelectedItem":{"id":"minecraft:barrier"
 execute as @a[scores={speed=..-1}, nbt={"SelectedItem":{"id":"minecraft:warped_fungus_on_a_stick"}}] run scoreboard players add @s speed 1
 execute as @a[scores={speed=1.., free.hand=0},] run scoreboard players remove @s speed 1
 
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run function minekart:karts/player_hotbar
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run function minekart:player/hotbar
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run function minekart:items/ui
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!minekart_player] run clear @s
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5, tag=!minekart_player] unless block ~ 63 ~ air if block ~ 64 ~ air if block ~ 65 ~ air run tp ~ 64 ~
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!minekart_player] run scoreboard players add @s rounds 0
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] run tag @s add minekart_player
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5, tag=minekart_player] run clear @s
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5, tag=minekart_player] run function minekart:ui/clear_player_hotbar
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5, tag=minekart_player] run scoreboard players add @s rounds 0
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5] run tag @s remove minekart_player
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..2, tag=!minekart_player] run title @s actionbar ["⚠ Deine Hotbar wird gleich glöscht ⚠"]
 
 execute as @a if entity @s[scores={speed=..9}, nbt={"SelectedItem":{id:"minecraft:cyan_stained_glass_pane"}}] run scoreboard players add @s speed 1
 execute as @a if entity @s[scores={speed=..19}, nbt={"SelectedItem":{id:"minecraft:green_stained_glass_pane"}}] run scoreboard players add @s speed 1
@@ -45,11 +44,12 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5
 execute as @e[tag=off_road] at @s run scoreboard players set @p speed -100
 execute as @e[tag=off_road] at @s run title @p subtitle ["Error while loading Resourcepack 'MineKart_v2'                "]
 execute as @e[tag=off_road] at @s run title @p title ["\uEff1"]
-execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=tour.respawn, sort=nearest, limit=1]
+execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=route, sort=nearest, limit=1]
 
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s at @p[distance=...5, scores={speed=10..}] positioned ~ ~.41249938686374 ~ run tp @s ~ ~ ~ ~ 0
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s at @p[distance=...5, scores={speed=10..}] positioned ~ ~.41249938686374 ~ run tp @s ~ ~ ~ ~ 0 
+# .41249938686374
 
-function minekart:karts/player_movement
+function minekart:player/movement
 
 scoreboard players add @a[scores={time_ago.sound_played=..999999}] time_ago.sound_played 1
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, scores={speed=5.., time_ago.sound_played=35..}] run playsound minecraft:block.beacon.ambient player @s

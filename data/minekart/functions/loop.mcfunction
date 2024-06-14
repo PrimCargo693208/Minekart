@@ -5,7 +5,7 @@ execute as @e[tag=mk2,tag=kart] at @s if score started data matches 0 run tp @s 
 
 function minekart:items/use
 function minekart:player/main
-function minekart:npc/drive
+function minekart:npc/main
 
 function minekart:items/box
 

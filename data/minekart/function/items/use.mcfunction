@@ -2,7 +2,7 @@ execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{comp
 execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 1}, id: "minecraft:warped_fungus_on_a_stick"}}] run scoreboard players set @s item.collected 0
 execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 1}, id: "minecraft:warped_fungus_on_a_stick"}}] run playsound minecraft:block.amethyst_block.break voice @s
 
-execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 2}, id: "minecraft:warped_fungus_on_a_stick"}}] run scoreboard players set @p[distance=1..] speed 0
+execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 2}, id: "minecraft:warped_fungus_on_a_stick"}}] run scoreboard players set @n[distance=1..] speed 0
 execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 2}, id: "minecraft:warped_fungus_on_a_stick"}}] run scoreboard players set @s item.collected 0
 execute as @a[scores={item.used=1..}] at @s if entity @s[nbt={SelectedItem:{components: {"minecraft:custom_model_data": 2}, id: "minecraft:warped_fungus_on_a_stick"}}] run playsound minecraft:block.amethyst_block.break voice @s
 

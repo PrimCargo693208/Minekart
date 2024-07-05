@@ -44,7 +44,7 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5
 execute as @e[tag=off_road] at @s run scoreboard players set @p speed -100
 execute as @e[tag=off_road] at @s run title @p subtitle ["Error while loading Resourcepack 'MineKart_v2'                "]
 execute as @e[tag=off_road] at @s run title @p title ["\uEff1"]
-execute as @e[tag=off_road] at @s run tp @s @e[tag=mk2, tag=route, sort=nearest, limit=1]
+execute as @e[tag=off_road] at @s run tp @s @n[tag=mk2, tag=route]
 
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s at @p[distance=...5, scores={speed=10..}] positioned ~ ~.41249938686374 ~ run tp @s ~ ~ ~ ~ 0
 

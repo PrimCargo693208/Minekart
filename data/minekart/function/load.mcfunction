@@ -1,3 +1,4 @@
+function minekart:unload_reload
 function minekart:load_items
 
 scoreboard objectives add speed dummy

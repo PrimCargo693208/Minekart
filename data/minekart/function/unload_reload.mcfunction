@@ -1,6 +1,7 @@
 execute as @e[tag=mk2,tag=kart] at @s as @a[distance=...5] run tp @s ~ ~.05 ~
 
 scoreboard players reset * speed
+scoreboard players reset * max_speed
 scoreboard players reset * pos
 scoreboard players reset * rounds
 scoreboard players reset * time_ago.item_collect

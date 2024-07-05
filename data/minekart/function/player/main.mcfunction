@@ -13,19 +13,18 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5, ta
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..1.5] run tag @s remove minekart_player
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=.6..2, tag=!minekart_player] run title @s actionbar ["⚠ Deine Hotbar wird gleich glöscht ⚠"]
 
-execute as @a if entity @s[scores={speed=..9}, nbt={"SelectedItem":{id:"minecraft:cyan_stained_glass_pane"}}] run scoreboard players add @s speed 1
-execute as @a if entity @s[scores={speed=..19}, nbt={"SelectedItem":{id:"minecraft:green_stained_glass_pane"}}] run scoreboard players add @s speed 1
-execute as @a if entity @s[scores={speed=..29}, nbt={"SelectedItem":{id:"minecraft:lime_stained_glass_pane"}}] run scoreboard players add @s speed 1
-execute as @a if entity @s[scores={speed=..39}, nbt={"SelectedItem":{id:"minecraft:yellow_stained_glass_pane"}}] run scoreboard players add @s speed 1
-execute as @a if entity @s[scores={speed=..49}, nbt={"SelectedItem":{id:"minecraft:orange_stained_glass_pane"}}] run scoreboard players add @s speed 1
-execute as @a if entity @s[scores={speed=..59}, nbt={"SelectedItem":{id:"minecraft:red_stained_glass_pane"}}] run scoreboard players add @s speed 1
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:cyan_stained_glass_pane"}}] run scoreboard players set @s max_speed 10
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:green_stained_glass_pane"}}] run scoreboard players set @s max_speed 20
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:lime_stained_glass_pane"}}] run scoreboard players set @s max_speed 30
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:yellow_stained_glass_pane"}}] run scoreboard players set @s max_speed 40
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:orange_stained_glass_pane"}}] run scoreboard players set @s max_speed 50
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:red_stained_glass_pane"}}] run scoreboard players set @s max_speed 60
+execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:barrier"}}] run scoreboard players set @s max_speed 0
 
-execute as @a if entity @s[scores={speed=11..}, nbt={"SelectedItem":{id:"minecraft:cyan_stained_glass_pane"}}] run scoreboard players remove @s speed 1
-execute as @a if entity @s[scores={speed=21..}, nbt={"SelectedItem":{id:"minecraft:green_stained_glass_pane"}}] run scoreboard players remove @s speed 1
-execute as @a if entity @s[scores={speed=31..}, nbt={"SelectedItem":{id:"minecraft:lime_stained_glass_pane"}}] run scoreboard players remove @s speed 1
-execute as @a if entity @s[scores={speed=41..}, nbt={"SelectedItem":{id:"minecraft:yellow_stained_glass_pane"}}] run scoreboard players remove @s speed 1
-execute as @a if entity @s[scores={speed=51..}, nbt={"SelectedItem":{id:"minecraft:orange_stained_glass_pane"}}] run scoreboard players remove @s speed 1
-execute as @a if entity @s[scores={speed=61..}, nbt={"SelectedItem":{id:"minecraft:red_stained_glass_pane"}}] run scoreboard players remove @s speed 1
+execute as @a if score @s speed < @s max_speed run scoreboard players add @s speed 1
+execute as @a if score @s speed > @s max_speed run scoreboard players remove @s speed 1
+execute as @a[scores={speed=0..60}] if score @s speed < @s max_speed run scoreboard players add @s speed 1
+execute as @a[scores={speed=0..60}] if score @s speed > @s max_speed run scoreboard players remove @s speed 1
 
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] if block ~ ~-1.5 ~ minecraft:diamond_block run scoreboard players add @s rounds 1
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] if block ~ ~-1.5 ~ minecraft:diamond_block run title @s[scores={rounds=..3}] title ["",{"text":"Runde ","bold":true,"color":"dark_aqua"},{"score":{"name":"@s","objective":"rounds"},"bold":true,"color":"gold"},{"text":"/3","bold":true,"color":"gold"}]
@@ -42,6 +41,9 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[distance=...5] if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
 
 execute as @e[tag=off_road] at @s run scoreboard players set @p speed -100
+execute as @e[tag=off_road] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1 normal
+execute as @e[tag=off_road] at @s run playsound entity.dragon_fireball.explode neutral @a[distance=..64] ~ ~ ~ .5 1 .1
+execute as @e[tag=off_road] at @s run scoreboard players set @s max_speed 0
 execute as @e[tag=off_road] at @s run title @p subtitle ["Error while loading Resourcepack 'MineKart_v2'                "]
 execute as @e[tag=off_road] at @s run title @p title ["\uEff1"]
 execute as @e[tag=off_road] at @s run tp @s @n[tag=mk2, tag=route]

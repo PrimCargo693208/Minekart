@@ -1,0 +1,1 @@
+$execute as @e[tag=mk2,tag=com_player] at @s unless block ^ ^ ^$(b) #minekart:border unless block ^ ^ ^$(c) #minekart:border unless block ^ ^ ^$(d) #minekart:border unless block ^ ^ ^$(e) #minekart:border unless block ^ ^ ^$(f) #minekart:border unless block ^ ^ ^$(g) #minekart:border run scoreboard players set @s max_speed $(a)

@@ -9,7 +9,9 @@ function minekart:npc/main
 
 function minekart:items/box
 
-function minekart:ui/marker
+function minekart:ui/particle
 function minekart:ui/bossbar
 
 execute at @e[type=marker] run particle bubble ~ ~ ~ 0 0 0 0 1 normal
+
+execute as @e[tag=mk2,tag=com_player,sort=random,limit=1] if entity @p[distance=..8] run say Was ist das für ein hoher Ping?!

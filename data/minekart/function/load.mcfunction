@@ -2,6 +2,7 @@ function minekart:unload_reload
 function minekart:load_items
 
 scoreboard objectives add speed dummy
+scoreboard objectives add max_speed dummy
 scoreboard objectives add pos dummy ["Position on Road"]
 scoreboard objectives add rounds dummy ["Round of Race"]
 scoreboard objectives add time_ago.item_collect dummy

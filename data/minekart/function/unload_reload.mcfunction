@@ -13,8 +13,7 @@ scoreboard players reset * free.hotbar8
 scoreboard players reset * item.used
 scoreboard players reset * item.collected
 scoreboard players reset * data
-
-bossbar remove mk2:rounds
+scoreboard players reset * id
 
 function minekart:kill_all_karts
 

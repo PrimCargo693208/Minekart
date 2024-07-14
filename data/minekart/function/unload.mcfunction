@@ -1,3 +1,5 @@
+function minekart:bossbar/unload
+
 scoreboard objectives remove speed
 scoreboard objectives remove pos
 scoreboard objectives remove rounds
@@ -12,4 +14,8 @@ scoreboard objectives remove data
 bossbar remove mk2:rounds
 
 function minekart:kill_everything
+function minekart:unload_id
 scoreboard objectives setdisplay below_name
+
+clear @a #minekart:spawn_eggs[minecraft:custom_data={"namespace":"minekart"}]
+clear @a #minekart:hotbar[minecraft:custom_data={"namespace":"minekart"}]

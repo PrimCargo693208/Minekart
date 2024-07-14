@@ -8,5 +8,7 @@ function minekart:npc/summon_com
 scoreboard players add @a speed 0
 scoreboard players add @e[tag=com_player,tag=mk2] pos 0
 scoreboard players add @e[tag=com_player,tag=mk2] rounds 0
+scoreboard players add @e[tag=com_player,tag=mk2] item.collected 0
+scoreboard players add @e[tag=com_player,tag=mk2] item.used 0
 scoreboard players set started data 1
 title @s title ["§2Los"]

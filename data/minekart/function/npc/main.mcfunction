@@ -1,20 +1,22 @@
 
 execute as @e[tag=mk2,tag=com_player] at @s if block ^.5 ^ ^ #minekart:air if block ^ ^ ^.5 #minekart:border run tp @s ^ ^ ^ ~-15 ~
 execute as @e[tag=mk2,tag=com_player] at @s if block ^-.5 ^ ^ #minekart:air if block ^ ^ ^.5 #minekart:border run tp @s ^ ^ ^ ~15 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^1 ^ ^ #minekart:air if block ^ ^ ^1 #minekart:border run tp @s ^ ^ ^ ~-15 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-1 ^ ^ #minekart:air if block ^ ^ ^1 #minekart:border run tp @s ^ ^ ^ ~15 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^1 ^ ^ #minekart:border run tp @s ~ ~ ~ ~10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-1 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^1.5 ^ ^ #minekart:air if block ^ ^ ^1.5 #minekart:border run tp @s ^ ^ ^ ~-10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-1.5 ^ ^ #minekart:air if block ^ ^ ^1.5 #minekart:border run tp @s ^ ^ ^ ~10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^1.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~5 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-1.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-5 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^2 ^ ^ #minekart:air if block ^ ^ ^2 #minekart:border run tp @s ^ ^ ^ ~-10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-2 ^ ^ #minekart:air if block ^ ^ ^2 #minekart:border run tp @s ^ ^ ^ ~10 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^2 ^ ^ #minekart:border run tp @s ~ ~ ~ ~5 ~
-execute as @e[tag=mk2,tag=com_player] at @s if block ^-2 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~15 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-15 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^1 ^ ^ #minekart:air if block ^ ^ ^1 #minekart:border run tp @s ^ ^ ^ ~-5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-1 ^ ^ #minekart:air if block ^ ^ ^1 #minekart:border run tp @s ^ ^ ^ ~5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^1 ^ ^ #minekart:border run tp @s ~ ~ ~ ~5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-1 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^1.5 ^ ^ #minekart:air if block ^ ^ ^1.5 #minekart:border run tp @s ^ ^ ^ ~-2 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-1.5 ^ ^ #minekart:air if block ^ ^ ^1.5 #minekart:border run tp @s ^ ^ ^ ~2 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^1.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~2 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-1.5 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-2 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^2 ^ ^ #minekart:air if block ^ ^ ^2 #minekart:border run tp @s ^ ^ ^ ~-1 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-2 ^ ^ #minekart:air if block ^ ^ ^2 #minekart:border run tp @s ^ ^ ^ ~1 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^2 ^ ^ #minekart:border run tp @s ~ ~ ~ ~1 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-2 ^ ^ #minekart:border run tp @s ~ ~ ~ ~-1 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^1 ^ ^1 #minekart:air run tp @s ^ ^ ^ ~-5 ~
+execute as @e[tag=mk2,tag=com_player] at @s if block ^-1 ^ ^1 #minekart:air run tp @s ^ ^ ^ ~5 ~
 
 function minekart:npc/distance_speed {a: 10, b: 1, c: 0, d: 0, e: 0, f: 0, g: 0}
 function minekart:npc/distance_speed {a: 20, b: 1, c: 2, d: 0, e: 0, f: 0, g: 0}
@@ -36,8 +38,15 @@ execute as @e[tag=off_road_com] at @s run tp @s @n[tag=mk2, tag=route]
 execute as @e[tag=mk2,tag=com_player,scores={speed=..-1}] at @s if entity @a[distance=..32,tag=dev] run particle minecraft:smoke ~ ~.5 ~ 0.1 0.1 0.1 0.05 10 normal
 
 
-execute if entity @e[tag=mk2,tag=item.box,distance=..1] run kill @n[tag=mk2,tag=item.box]
-execute if entity @e[tag=mk2,tag=item.box,distance=..1] store result score @s item.collected run random value 1..2
+execute as @e[tag=mk2,tag=com_player,scores={item.collected=0}] run scoreboard players set @s item.used 0
+execute as @e[tag=mk2,tag=com_player,scores={item.used=0}] at @s if entity @e[tag=mk2,tag=item.box,distance=..1] store result score @s item.collected run random value 1..2
+execute as @e[tag=mk2,tag=com_player,scores={item.used=0}] at @s if entity @e[tag=mk2,tag=item.box,distance=..1] run kill @n[tag=mk2,tag=item.box]
+execute as @e[tag=mk2,tag=com_player] at @s if score @s item.collected matches 1.. run scoreboard players add @s item.used 1
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1 run scoreboard players set @s speed 150
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1 run say Item used > §cTurbopilz
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run scoreboard players set @n[distance=1..,tag=mk2,tag=com_player] speed 0
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run say Item used > §6Banane
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1.. run scoreboard players set @s item.collected 0
 
 scoreboard players add @e[tag=mk2,tag=com_player] speed 0
 scoreboard players add @e[tag=mk2,tag=com_player] max_speed 0

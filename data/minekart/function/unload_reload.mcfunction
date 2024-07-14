@@ -1,3 +1,5 @@
+function minekart:bossbar/unload
+
 execute as @e[tag=mk2,tag=kart] at @s as @a[distance=...5] run tp @s ~ ~.05 ~
 
 scoreboard players reset * speed
@@ -15,3 +17,6 @@ scoreboard players reset * data
 bossbar remove mk2:rounds
 
 function minekart:kill_all_karts
+
+clear @a #minekart:spawn_eggs[minecraft:custom_data={"namespace":"minekart"}]
+clear @a #minekart:hotbar[minecraft:custom_data={"namespace":"minekart"}]

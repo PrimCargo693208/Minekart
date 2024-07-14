@@ -1,0 +1,16 @@
+bossbar remove mk2:rounds_1
+bossbar remove mk2:rounds_2
+bossbar remove mk2:rounds_3
+bossbar remove mk2:rounds_4
+bossbar remove mk2:rounds_5
+bossbar remove mk2:rounds_6
+bossbar remove mk2:rounds_7
+bossbar remove mk2:rounds_8
+bossbar remove mk2:rounds_9
+bossbar remove mk2:rounds_10
+bossbar remove mk2:rounds_11
+bossbar remove mk2:rounds_12
+bossbar remove mk2:rounds_13
+bossbar remove mk2:rounds_14
+bossbar remove mk2:rounds_15
+bossbar remove mk2:rounds_16

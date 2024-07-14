@@ -1,0 +1,16 @@
+execute if entity @s[tag=id_1] run function minekart:bossbar/makro_loop {player_id: 1}
+execute if entity @s[tag=id_2] run function minekart:bossbar/makro_loop {player_id: 2}
+execute if entity @s[tag=id_3] run function minekart:bossbar/makro_loop {player_id: 3}
+execute if entity @s[tag=id_4] run function minekart:bossbar/makro_loop {player_id: 4}
+execute if entity @s[tag=id_5] run function minekart:bossbar/makro_loop {player_id: 5}
+execute if entity @s[tag=id_6] run function minekart:bossbar/makro_loop {player_id: 6}
+execute if entity @s[tag=id_7] run function minekart:bossbar/makro_loop {player_id: 7}
+execute if entity @s[tag=id_8] run function minekart:bossbar/makro_loop {player_id: 8}
+execute if entity @s[tag=id_9] run function minekart:bossbar/makro_loop {player_id: 9}
+execute if entity @s[tag=id_10] run function minekart:bossbar/makro_loop {player_id: 10}
+execute if entity @s[tag=id_11] run function minekart:bossbar/makro_loop {player_id: 11}
+execute if entity @s[tag=id_12] run function minekart:bossbar/makro_loop {player_id: 12}
+execute if entity @s[tag=id_13] run function minekart:bossbar/makro_loop {player_id: 13}
+execute if entity @s[tag=id_14] run function minekart:bossbar/makro_loop {player_id: 14}
+execute if entity @s[tag=id_15] run function minekart:bossbar/makro_loop {player_id: 15}
+execute if entity @s[tag=id_16] run function minekart:bossbar/makro_loop {player_id: 16}

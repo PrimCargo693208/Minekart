@@ -25,6 +25,14 @@ function minekart:npc/distance_speed {a: 40, b: 1, c: 2, d: 3, e: 4, f: 0, g: 0}
 function minekart:npc/distance_speed {a: 50, b: 1, c: 2, d: 3, e: 4, f: 5, g: 0}
 function minekart:npc/distance_speed {a: 60, b: 1, c: 2, d: 3, e: 4, f: 5, g: 6}
 
+execute as @e[tag=com_player,scores={rounds=4..}] run scoreboard players set @s max_speed 0
+execute as @e[tag=com_player,scores={rounds=4..}, tag=!finished] run say §2§lZIEL
+execute as @e[tag=com_player,scores={rounds=4..}] run tag @s add finished
+
+execute as @e[tag=mk2, tag=minekart2, tag=com_player, tag=!next_round] at @s if block ~ ~-1.5 ~ minecraft:diamond_block run scoreboard players add @s rounds 1
+execute as @e[tag=mk2, tag=minekart2, tag=com_player] at @s if block ~ ~-1.5 ~ minecraft:diamond_block run tag @s add next_round
+execute as @e[tag=mk2, tag=minekart2, tag=com_player, tag=next_round] at @s unless block ~ ~-1.5 ~ minecraft:diamond_block run tag @s remove next_round
+
 
 tag @e remove off_road_com
 execute as @e[tag=mk2,tag=com_player] at @s if block ~ ~-.5 ~ minecraft:red_wool run tag @s add off_road_com
@@ -42,16 +50,17 @@ execute as @e[tag=mk2,tag=com_player,scores={item.collected=0}] run scoreboard p
 execute as @e[tag=mk2,tag=com_player,scores={item.used=0}] at @s if entity @e[tag=mk2,tag=item.box,distance=..1] store result score @s item.collected run random value 1..2
 execute as @e[tag=mk2,tag=com_player,scores={item.used=0}] at @s if entity @e[tag=mk2,tag=item.box,distance=..1] run kill @n[tag=mk2,tag=item.box]
 execute as @e[tag=mk2,tag=com_player] at @s if score @s item.collected matches 1.. run scoreboard players add @s item.used 1
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1 run scoreboard players set @s speed 150
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1 run say Item used > §cTurbopilz
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=60}] at @s if score @s item.collected matches 1 run say Item used > §cTurbopilz
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=60}] at @s if score @s item.collected matches 1 run scoreboard players set @s speed 150
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=150}] at @s if score @s item.collected matches 1 run scoreboard players set @s item.collected 0
 execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run scoreboard players set @n[distance=1..,tag=mk2,tag=com_player] speed 0
 execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run say Item used > §6Banane
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 1.. run scoreboard players set @s item.collected 0
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run scoreboard players set @s item.collected 0
 
 scoreboard players add @e[tag=mk2,tag=com_player] speed 0
 scoreboard players add @e[tag=mk2,tag=com_player] max_speed 0
-scoreboard players add @e[tag=mk2,tag=com_player,scores={max_speed=0}] max_speed 60
 scoreboard players add @e[tag=mk2,tag=com_player,scores={speed=..0}] speed 1
+execute as @e[tag=com_player,tag=finished] run scoreboard players set @s max_speed 0
 execute as @e[tag=mk2,tag=com_player,scores={speed=0..}] if score @s speed < @s max_speed run scoreboard players add @s speed 1
 execute as @e[tag=mk2,tag=com_player,scores={speed=0..}] if score @s speed > @s max_speed run scoreboard players remove @s speed 1
 execute as @e[tag=mk2,tag=com_player,scores={speed=0..60}] if score @s speed < @s max_speed run scoreboard players add @s speed 1

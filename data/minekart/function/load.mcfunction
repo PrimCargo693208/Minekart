@@ -1,5 +1,5 @@
 function minekart:unload_reload
-function minekart:load_items
+function minekart:items
 
 scoreboard objectives add speed dummy
 scoreboard objectives add max_speed dummy
@@ -29,7 +29,7 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:main/count_marker
 function minekart:main/summon_karts
 
-tellraw @a ["","[Server] ",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"},"\n",{"text":" > Rennen starten","color":"gold","clickEvent":{"action":"suggest_command","value":"/function minekart:start"}}]
+tellraw @a ["\n",{"text":"Minekart v2","color":"aqua","bold":true,"hoverEvent":{"action":"show_text","contents":[{"text":"(version 0.2.1)","italic":true}]}},"\n",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"},"\n",{"text":" > Rennen starten","color":"gold","clickEvent":{"action":"suggest_command","value":"/function minekart:start"}}]
 
 execute as @a run function minekart:load_id
 execute as @a run function minekart:bossbar/load

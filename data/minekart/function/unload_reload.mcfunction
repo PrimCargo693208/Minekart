@@ -1,4 +1,4 @@
-function minekart:bossbar/unload
+execute as @a[scores={id=1..}] run function minekart:bossbar/unload
 
 execute as @e[tag=mk2,tag=kart] at @s as @a[distance=...5] run tp @s ~ ~.05 ~
 

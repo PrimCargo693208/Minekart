@@ -18,6 +18,7 @@ execute as @a if entity @s[nbt={"SelectedItem":{id:"minecraft:barrier"}}] run sc
 
 execute as @a[scores={rounds=4..}] run scoreboard players set @s max_speed 0
 execute as @a[scores={rounds=4..}, tag=!finished] run say §2§lZIEL
+execute as @a[scores={rounds=4..,speed=0}, tag=!finished] at @n[tag=goal,tag=mk2] run tp @s ^ ^ ^5
 execute as @a[scores={rounds=4..}] run tag @s add finished
 
 execute as @a if score @s speed < @s max_speed run scoreboard players add @s speed 1

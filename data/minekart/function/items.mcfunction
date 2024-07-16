@@ -1,4 +1,8 @@
 
+
+clear @a #minekart:spawn_eggs[minecraft:custom_data={"namespace":"minekart"}]
+clear @a #minekart:hotbar[minecraft:custom_data={"namespace":"minekart"}]
+
 give @a chicken_spawn_egg[custom_data={"namespace": "minekart"},item_name='{"color":"dark_aqua","text":"Spawner"}', lore=['{"color":"blue","italic":true,"text":"Minekart 2"}','{"color":"dark_purple","italic":false,"text":"Erstellt einen Spawner für die Itemboxen."}'],entity_data={id:"minecraft:marker",Tags:["mk2","minekart2","item.spawner"]}] 1
 give @a parrot_spawn_egg[custom_data={"namespace": "minekart"},item_name='{"color":"dark_aqua","text":"Kart"}', lore=['{"color":"blue","italic":true,"text":"Minekart 2"}','{"color":"dark_purple","italic":false,"text":"Benutze dieses Item, um ein Kart zu erstellen."}'],entity_data={id:"minecraft:minecart",NoGravity:1b,Silent:1b,Invulnerable:1b,CustomNameVisible:0b,Tags:["minekart2","mk2","kart"]}] 1
 give @a cow_spawn_egg[custom_data={"namespace": "minekart"},item_name='{"color":"dark_aqua","text":"Streckenmarker"}', lore=['{"color":"blue","italic":true,"text":"Minekart 2"}','{"color":"dark_purple","italic":false,"text":"im Abstand von ca. 5-15 Blöcken,"}','{"color":"dark_purple","italic":false,"text":"um die Strecke zu makieren."}','{"color":"dark_purple","italic":false,"text":"Nutze dieses Item auf der Strecke"}'],entity_data={id:"minecraft:marker",Tags:["mk2","minekart2","route"],CustomName:'{"text":"Respawnmarker"}'}] 1

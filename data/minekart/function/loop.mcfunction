@@ -12,5 +12,4 @@ function minekart:items/box
 function minekart:ui/particle
 function minekart:ui/bossbar
 
-execute at @e[type=marker] run particle bubble ~ ~ ~ 0 0 0 0 1 normal
 execute as @a run function minekart:bossbar/loop

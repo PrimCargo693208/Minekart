@@ -13,6 +13,10 @@ scoreboard objectives add item.used minecraft.used:minecraft.warped_fungus_on_a_
 scoreboard objectives add item.collected dummy
 scoreboard objectives add data dummy
 scoreboard objectives add id dummy
+scoreboard objectives add drop_move_x dummy
+scoreboard objectives add drop_move_z dummy
+scoreboard objectives add drop_move_x_prev dummy
+scoreboard objectives add drop_move_z_prev dummy
 
 scoreboard players add @a pos 0
 scoreboard players add @a rounds 0
@@ -23,13 +27,13 @@ scoreboard players add @a free.hotbar8 0
 scoreboard players add @a item.collected 0
 scoreboard players add started data 0
 scoreboard players add #id id 0
+scoreboard players set #-1 data -1
 
-scoreboard objectives setdisplay below_name rounds
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s run tp @s ~ ~ ~ 0 0
 function minekart:main/count_marker
 function minekart:main/summon_karts
 
-tellraw @a ["\n",{"text":"Minekart v2","color":"aqua","bold":true,"hoverEvent":{"action":"show_text","contents":[{"text":"(version 0.2.1)","italic":true}]}},"\n",{"text":"Reload","color":"dark_green","clickEvent":{"action":"suggest_command","value":"/reload"}},{"text":" erfolgreich","color":"dark_green"},"\n",{"text":" > Rennen starten","color":"gold","clickEvent":{"action":"suggest_command","value":"/function minekart:start"}}]
+tellraw @a [{"text":"\n"},{"bold":true,"color":"aqua","hoverEvent":{"action":"show_text","value":[{"text":"(version 0.3.0)","italic":true}]},"text":"Minekart v2"},{"text":"\n"},{"clickEvent":{"action":"suggest_command","value":"/reload"},"color":"dark_green","text":"Reload"},{"color":"dark_green","text":" erfolgreich"},{"text":"\n"},{"clickEvent":{"action":"suggest_command","value":"/function minekart:start"},"color":"gold","text":" > Rennen starten"},"\n",{"clickEvent":{"action":"suggest_command","value":"/tp @s @n[tag=mk2,tag=goal]"},"color":"gold","text":" > Zur Ziellinie"},{"clickEvent":{"action":"open_url","value":"https://github.com/PrimCargo693208/Minekart_Resourcepack"},"color":"gold","hoverEvent":{"action":"show_text","value":[{"text":"Download on \n","color":"gray"},{"text":"\uEff2GitHub","color":"white","bold":true}]},"text":"\n > Download Resourcepack"}]
 
 execute as @a run function minekart:load_id
 execute as @a run function minekart:bossbar/load

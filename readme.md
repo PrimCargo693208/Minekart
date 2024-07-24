@@ -1,8 +1,17 @@
-<h1>Minekart</h1>
+# Minekart
 
-<h2>Now compatible with 1.21!</h2>
+## Installation
+1. Drag the folder in the folder "datapacks" in the folder of your world
+2. Load or Reload the world with the `/reload` command
 
-Since this datapack uses the item "Warped Fungus on a Stick" for the items it's recommendet to use this [Resourcepack](https://github.com/PrimCargo693208/Minekart_Resourcepack).
+## Deinstallation
+1. Run the command `/function #minecraft:unload`
+2. Remove the folder from the world or run the command `/datapack disable "file/Minekart-main"`
+   1. **NOTE:** If you rename the folder, the content in the qotation marks will change
 
-RoadMap: https://github.com/users/PrimCargo693208/projects/6
+## Links
+ - [Resource Pack][res_pack]
+ - [RoadMap][road_map]
 
+[res_pack]: https://github.com/PrimCargo693208/Minekart_Resourcepack
+[road_map]: https://github.com/users/PrimCargo693208/projects/6

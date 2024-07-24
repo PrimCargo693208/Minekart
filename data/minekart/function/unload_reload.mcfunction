@@ -19,3 +19,7 @@ function minekart:kill_all_karts
 
 clear @a #minekart:spawn_eggs[minecraft:custom_data={"namespace":"minekart"}]
 clear @a #minekart:hotbar[minecraft:custom_data={"namespace":"minekart"}]
+
+tag @e remove finished
+tag @e remove player
+tag @e remove minekart_player

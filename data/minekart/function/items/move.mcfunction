@@ -1,0 +1,2 @@
+execute as @e[tag=mk2,tag=item.dropped] run scoreboard players add @s[scores={data=0..100}] data 1
+execute as @e[tag=mk2,tag=item.dropped] at @s if score @s data matches 4 run function minekart:items/move_as

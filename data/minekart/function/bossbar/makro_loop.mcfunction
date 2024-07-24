@@ -1,1 +1,2 @@
 $execute store result bossbar mk2:rounds_$(player_counter) value run scoreboard players get @s rounds
+$execute store result bossbar mk2:speed_$(player_counter) value run scoreboard players get @s speed

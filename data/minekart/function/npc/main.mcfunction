@@ -35,7 +35,7 @@ execute as @e[tag=mk2, tag=minekart2, tag=com_player, tag=next_round] at @s unle
 
 
 tag @e remove off_road_com
-execute as @e[tag=mk2,tag=com_player] at @s if block ~ ~-.5 ~ minecraft:red_wool run tag @s add off_road_com
+execute as @e[tag=mk2,tag=com_player] at @s if block ~ ~-1.5 ~ minecraft:red_wool run tag @s add off_road_com
 execute as @e[tag=mk2,tag=com_player] at @s if block ~ ~-.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road_com
 
 execute as @e[tag=off_road_com] at @s run scoreboard players set @s speed -100
@@ -52,10 +52,11 @@ execute as @e[tag=mk2,tag=com_player,scores={item.used=0}] at @s if entity @e[ta
 execute as @e[tag=mk2,tag=com_player] at @s if score @s item.collected matches 1.. run scoreboard players add @s item.used 1
 execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=60}] at @s if score @s item.collected matches 1 run say Item used > §cTurbopilz
 execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=60}] at @s if score @s item.collected matches 1 run scoreboard players set @s speed 150
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=150}] at @s if score @s item.collected matches 1 run scoreboard players set @s item.collected 0
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run scoreboard players set @n[distance=1..,tag=mk2,tag=com_player] speed 0
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run say Item used > §6Banane
-execute as @e[tag=mk2,tag=com_player,scores={item.used=100..}] at @s if score @s item.collected matches 2 run scoreboard players set @s item.collected 0
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=100..}] at @s if score @s item.collected matches 1 run scoreboard players set @s item.collected 0
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=10..}] at @s if score @s item.collected matches 2 run summon armor_stand ~ ~ ~ {Invisible:true,Small:true,Motion:[0.0,0.0,0.0],Tags:["mk2","minekart2","item.dropped","banana"],ArmorItems:[{},{},{},{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:custom_model_data":2}}]}
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=10..}] at @s if score @s item.collected matches 2 as @n[tag=mk2,tag=item.dropped] at @s run function minekart:items/use/banana
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=10..}] at @s if score @s item.collected matches 2 run say Item used > §6Banane
+execute as @e[tag=mk2,tag=com_player,scores={item.used=100..,speed=10..}] at @s if score @s item.collected matches 2 run scoreboard players set @s item.collected 0
 
 scoreboard players add @e[tag=mk2,tag=com_player] speed 0
 scoreboard players add @e[tag=mk2,tag=com_player] max_speed 0

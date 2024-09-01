@@ -10,3 +10,9 @@ $bossbar set mk2:speed_$(player_counter) players @s
 $bossbar set mk2:speed_$(player_counter) style notched_10
 $bossbar set mk2:speed_$(player_counter) max 100
 $bossbar set mk2:speed_$(player_counter) color green
+
+$bossbar add mk2:pos_$(player_counter) ["Position von ", {"selector":"@s"}]
+$bossbar set mk2:pos_$(player_counter) players @s
+$bossbar set mk2:pos_$(player_counter) style progress
+$bossbar set mk2:pos_$(player_counter) max $(len)
+$bossbar set mk2:pos_$(player_counter) color yellow

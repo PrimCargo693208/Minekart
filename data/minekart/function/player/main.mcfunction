@@ -35,11 +35,14 @@ execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5] if block ~ ~-1.5 ~ minecraft:diamond_block run tag @s add next_round
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=next_round] unless block ~ ~-1.5 ~ minecraft:diamond_block run tag @s remove next_round
 
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s as @p[distance=...5, tag=!next_round] run scoreboard players operation @s pos = @n[tag=mk2,tag=route] pos
+
+
 tag @e remove off_road
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5] if block ~ ~-1.5 ~ minecraft:red_wool run tag @s add off_road
-execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5] if block ~ ~-0.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
+execute as @e[tag=mk2, tag=minekart2, tag=kart, tag=!mk2.is_flying] at @s if entity @p[tag=minekart_player,distance=...5] if block ~ ~-0.5 ~ minecraft:air if block ~ ~-1.5 ~ minecraft:air run tag @s add off_road
 
-execute as @e[tag=off_road] at @s run scoreboard players set @p speed -100
+execute as @e[tag=off_road] at @s run scoreboard players set @p speed -50
 execute as @e[tag=off_road] at @s run scoreboard players set @p max_speed 0
 execute as @e[tag=off_road] at @s run particle explosion_emitter ~ ~1 ~ 0 0 0 0 1 normal
 execute as @e[tag=off_road] at @s run playsound entity.dragon_fireball.explode neutral @a[distance=..64] ~ ~ ~ .5 1 .1

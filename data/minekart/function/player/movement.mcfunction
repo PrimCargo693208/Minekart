@@ -1,5 +1,8 @@
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...25] if entity @p[scores={speed=..0}] run tp @s ~ ~ ~
 
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5] if block ~ ~-1 ~ minecraft:redstone_block run tag @s add mk2.is_flying
+execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5] if block ~ ~-1 ~ minecraft:emerald_block run tag @s remove mk2.is_flying
+
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5,scores={speed=5..}] run tp @s ^ ^ ^.05
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5,scores={speed=5..}] if block ~ ~-1 ~ minecraft:purpur_stairs run tp @s ^ ^.05 ^
 execute as @e[tag=mk2, tag=minekart2, tag=kart] at @s if entity @p[tag=minekart_player,distance=...5,scores={speed=5..}] if block ~ ~-2 ~ minecraft:prismarine_brick_stairs run tp @s ^ ^-.05 ^

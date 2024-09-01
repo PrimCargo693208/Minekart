@@ -1,11 +1,14 @@
-execute as @a[scores={id=1..}] run function minekart:bossbar/unload
+execute as @a run function minekart:bossbar/unload
 
 execute as @e[tag=mk2,tag=kart] at @s as @a[distance=...5] run tp @s ~ ~.05 ~
+
+function minekart:load_gm
 
 scoreboard players reset * speed
 scoreboard players reset * max_speed
 scoreboard players reset * pos
 scoreboard players reset * rounds
+scoreboard players reset * gm
 scoreboard players reset * time_ago.item_collect
 scoreboard players reset * time_ago.sound_played
 scoreboard players reset * free.hand 

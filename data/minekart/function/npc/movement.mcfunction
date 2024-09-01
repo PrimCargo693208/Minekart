@@ -1,6 +1,8 @@
 
 scoreboard players add @e[tag=mk2, tag=com_player, limit=1, sort=nearest, distance=..1] speed 0
 
+execute as @e[tag=mk2,tag=com_kart] at @s if entity @n[tag=mk2, tag=com_player, distance=..1] if block ~ ~-1 ~ minecraft:redstone_block run tag @n[tag=com_player,tag=mk2] add mk2.is_flying
+execute as @e[tag=mk2,tag=com_kart] at @s if entity @n[tag=mk2, tag=com_player, distance=..1] if block ~ ~-1 ~ minecraft:emerald_block run tag @n[tag=com_player,tag=mk2] remove mk2.is_flying
 
 execute as @e[tag=mk2,tag=com_kart] at @s at @e[tag=mk2, tag=com_player, limit=1, sort=nearest, distance=..1] run tp @n[tag=mk2,tag=com_kart] ~ ~ ~ ~ ~
 

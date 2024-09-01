@@ -1,13 +1,14 @@
 # Minekart
 
 ## Installation
-1. Drag the folder in the folder "datapacks" in the folder of your world
-2. Load or Reload the world with the `/reload` command
+1. Download the Folder "Minekart-raw.zip" from the releases of this Repository and drag it into the folder "datapacks" of your world.
+2. Download the Folder "ID-raw.zip" from my Datapack [ID](https://github.com/PrimCargo693208/ID/releases) and drag it into the folder "datapacks" of your world.
+3. Load or Reload the world with the `/reload` command.
 
 ## Deinstallation
-1. Run the command `/function #minecraft:unload`
+1. Run the command `/function #minecraft:unload` or `/function minekart:unload`
 2. Remove the folder from the world or run the command `/datapack disable "file/Minekart-main"`
-   1. **NOTE:** If you rename the folder, the content in the qotation marks will change
+   1. **NOTE:** If you rename one of the folders or files, the content in the qotation marks can change.
 
 ## Links
  - [Resource Pack][res_pack]
